@@ -1,0 +1,80 @@
+- name: Remove unnecessary packages
+  become: yes
+  package:
+    name:
+      - gedit
+      - gnome-boxes
+      - gnome-clocks
+      - gnome-contacts
+      - gnome-help
+      - gnome-maps
+      - gnome-remote-desktop
+      - gnome-shell-extension-apps-menu
+      - gnome-shell-extension-background-logo
+      - gnome-shell-extension-places-menu
+      - gnome-shell-extension-window-list
+      - gnome-shell-extension-user-theme
+      - gnome-tour
+      - gnome-weather
+      - totem
+      - yelp
+    state: absent
+
+- name: Install CLI utilities
+  become: yes
+  package:
+    name:
+      - bat
+      - exa
+      - fd-find
+      - htop
+      - ImageMagick
+      - pandoc
+      - ripgrep
+      - starship
+      - youtube-dl
+    state: present
+
+- name: Install development tools
+  become: yes
+  package:
+    name:
+      - git
+      - stow
+      - python3-psutil
+      - toolbox
+    state: present
+
+- name: Install text editors
+  become: yes
+  package:
+    name:
+      - emacs
+      - neovim
+    state: present
+
+- name: Install gui programs
+  become: yes
+  package:
+    name:
+      - audacity
+      - calibre
+      - celluloid
+      - chromium
+      - foliate
+      - gimp
+      - libreoffice
+      - qutebrowser
+    state: present
+
+- name: Install virtualization software
+  dnf:
+    name: '@virtualization'
+    state: present
+
+
+- name: Install printer drivers
+  become: yes
+  package:
+    name: epson-inkjet-printer-escpr
+    state: present

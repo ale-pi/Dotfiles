@@ -1,0 +1,5 @@
+- name: Install wireless drivers
+  become: yes
+  package:
+    name: broadcom-wl
+    state: present

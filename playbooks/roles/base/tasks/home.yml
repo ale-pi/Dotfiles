@@ -1,0 +1,18 @@
+- name: Remove unused folders
+  file:
+    path: /home/ap/{{ item }}
+    state: absent
+  with_items:
+    - Scrivania
+    - Pubblici
+    - Modelli
+
+- name: Create some directories
+  file:
+    path: /home/ap/{{ item }}
+    state: directory
+    owner: ap
+    group: ap
+  with_items:
+    - Progetti
+    - Org

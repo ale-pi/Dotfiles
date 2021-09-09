@@ -1,0 +1,8 @@
+emacs/.emacs.d/auto-save-list/**
+emacs/.emacs.d/elpa/**
+emacs/.emacs.d/emms/**
+emacs/.emacs.d/snippets/**
+emacs/.emacs.d/transient/**
+emacs/.emacs.d/history
+emacs/.emacs.d/eshell/**
+emacs/.emacs.d/backups/**

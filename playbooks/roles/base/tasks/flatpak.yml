@@ -1,0 +1,16 @@
+- name: Add the flathub flatpak repository
+  become: yes
+  become_user: ap
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: user
+
+- name: Install flatpak programs
+  become: yes
+  become_user: ap
+  flatpak:
+    name: "com.discordapp.Discord com.jetbrains.PyCharm-Community com.obsproject.Studio com.skype.Client com.spotify.Client net.cozic.joplin_desktop org.geogebra.GeoGebra org.kde.kdenlive org.kde.krita org.telegram.desktop us.zoom.Zoom"
+    state: present
+    method: user

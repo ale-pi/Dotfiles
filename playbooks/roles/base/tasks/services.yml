@@ -1,0 +1,11 @@
+- name: Enable sshd
+  become: yes
+  ansible.builtin.service:
+    name: sshd
+    enabled: yes
+
+- name: Enable libvirtd
+  become: yes
+  ansible.builtin.service:
+    name: libvirtd
+    enabled: yes

@@ -1,0 +1,112 @@
+# Appearance
+
+- name: Copy wallpaper
+  become: yes
+  copy:
+    src: files/wallpaper.png
+    dest: /usr/share/backgrounds/wallpaper.png
+    owner: root
+    group: root
+- name: Set wallpaper
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/desktop/background/picture-uri"
+    value: "'file:///usr/share/backgrounds/wallpaper.png'"
+- name: Set wallpaper options
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/desktop/background/picture-options"
+    value: "'zoom'"
+- name: Set lockscreen
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/desktop/screensaver/picture-uri"
+    value: "'file:///usr/share/backgrounds/wallpaper.png'"
+- name: Set lockscreen options
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/desktop/screensaver/picture-options"
+    value: "'zoom'"
+- name: Install icon theme
+  become: yes
+  package: 
+    name: papirus-icon-theme
+    state: present
+- name: Set icon theme
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/desktop/interface/icon-theme"
+    value: "'Papirus-Dark'"
+- name: Set GTK theme
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/desktop/interface/gtk-theme"
+    value: "'Adwaita-dark'"
+- name: Create user font directory
+  file:
+    path: /home/ap/.local/share/fonts
+    state: directory
+- name: Download monospace font
+  get_url:
+    url: "https://github.com/larsenwork/monoid/blob/master/Monoisome/Monoisome-Regular.ttf?raw=true"
+    dest: /home/ap/.local/share/fonts
+- name: Set monospace font face
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/desktop/interface/monospace-font-name"
+    value: "'Monoisome Regular 10'"
+
+# Keybindings
+
+- name: Swap Caps-lock and Ctrl
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/desktop/input-sources/xkb-options"
+    value: "['ctrl:swapcaps']"
+      
+# Behaviour
+
+- name: Enable Night Light
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled"
+    value: "true"
+- name: Set Night Light Temperature
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature"
+    value: "uint32 5500"
+- name: Enable extensions
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/shell/disable-user-extensions"
+    value: "false"
+- name: Enable launch-new-instance extension
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/shell/enabled-extensions"
+    value: "['launch-new-instance@gnome-shell-extensions.gcampax.github.com']"
+- name: Set favorite applications
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/shell/favorite-apps"
+    value: "['gnome-terminal.desktop', 'firefox.desktop', 'emacs.desktop', 'nautilus.desktop']"
+- name: Sort apps alphabetically
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/shell/app-picker-layout"
+    value: "'[]'"
