@@ -4,7 +4,7 @@
 ;; Setup fonts for org-mode
 (defun ap/org-fonts-setup ()
   (dolist (face org-level-faces)
-    (set-face-attribute face nil :font "DejaVu Sans" :weight 'bold :height 160))
+    (set-face-attribute face nil :font "DejaVu Sans" :weight 'bold :height 120))
   (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
   (set-face-attribute 'org-table nil    :inherit 'fixed-pitch)
   (set-face-attribute 'org-formula nil  :inherit 'fixed-pitch)
