@@ -86,18 +86,23 @@
   dconf:
     key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature"
     value: "uint32 5500"
-- name: Enable extensions
+- name: Enable user extensions support
   become: yes
   become_user: ap
   dconf:
     key: "/org/gnome/shell/disable-user-extensions"
     value: "false"
-- name: Enable launch-new-instance extension
+- name: Install extensions
+  become: yes
+  package:
+    name: gnome-shell-extension-appindicator
+    state: present
+- name: Enable extension
   become: yes
   become_user: ap
   dconf:
     key: "/org/gnome/shell/enabled-extensions"
-    value: "['launch-new-instance@gnome-shell-extensions.gcampax.github.com']"
+    value: "['launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'appindicatorsupport@rgcjonas.gmail.com']"
 - name: Set favorite applications
   become: yes
   become_user: ap
