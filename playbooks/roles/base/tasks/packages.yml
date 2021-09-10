@@ -39,9 +39,12 @@
   become: yes
   package:
     name:
+      - code
       - git
       - stow
+      - pycharm-community
       - python3-psutil
+      - python3-pylint
       - toolbox
     state: present
 
