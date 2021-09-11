@@ -30,6 +30,7 @@ unset rc
 alias po="systemctl poweroff"
 alias re="systemctl reboot"
 alias te="toolbox enter"
+alias tm="tmux"
 alias ls="exa --classify"
 alias la="exa --classify -la"
 alias tree="exa --tree"
