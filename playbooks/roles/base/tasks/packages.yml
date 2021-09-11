@@ -67,7 +67,6 @@
       - foliate
       - gimp
       - libreoffice
-      - qutebrowser
     state: present
 
 - name: Install virtualization software
