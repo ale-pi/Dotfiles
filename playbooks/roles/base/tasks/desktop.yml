@@ -114,7 +114,7 @@
   become_user: ap
   dconf:
     key: "/org/gnome/shell/enabled-extensions"
-    value: "['launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'appindicatorsupport@rgcjonas.gmail.com']"
+    value: "['appindicatorsupport@rgcjonas.gmail.com']"
 - name: Set favorite applications
   become: yes
   become_user: ap
