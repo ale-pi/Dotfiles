@@ -1,0 +1,10 @@
+- name: Change hostname
+  hostname:
+    name: "thinkbook"
+
+- name: Edit /etc/hosts
+  lineinfile:
+    dest: /etc/hosts
+    regexp: '^127\.0\.0\.1[ \t]+localhost'
+    line: '127.0.0.1 localhost thinkbook'
+    state: present
