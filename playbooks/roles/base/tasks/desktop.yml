@@ -62,6 +62,18 @@
   dconf:
     key: "/org/gnome/desktop/interface/monospace-font-name"
     value: "'Monoisome Regular 10'"
+- name: Disable bell in gnome-terminal
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/audible-bell"
+    value: "false"
+- name: Disable bell in gnome-terminal
+  become: yes
+  become_user: ap
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollbar-policy"
+    value: "'never'"
 
 # Keybindings
 
