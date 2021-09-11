@@ -32,6 +32,7 @@
       - pandoc
       - ripgrep
       - starship
+      - tmux
       - youtube-dl
     state: present
 
