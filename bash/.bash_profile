@@ -6,4 +6,4 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export EDITOR="emacs"
