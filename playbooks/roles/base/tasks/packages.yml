@@ -41,10 +41,13 @@
   become: yes
   package:
     name:
+      - clang
+      - clang-tools-extra
       - code
       - git
       - stow
       - pycharm-community
+      - python3-language-server
       - python3-psutil
       - python3-pylint
       - toolbox
