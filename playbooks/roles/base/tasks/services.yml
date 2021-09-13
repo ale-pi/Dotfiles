@@ -9,3 +9,14 @@
   ansible.builtin.service:
     name: libvirtd
     enabled: yes
+
+- name: Install syncthing
+  become: yes
+  package:
+    name: syncthing
+    state: present
+- name: Enable syncthing
+  become: yes
+  ansible.builtin.service:
+    name: syncthing@ap
+    enabled: yes
