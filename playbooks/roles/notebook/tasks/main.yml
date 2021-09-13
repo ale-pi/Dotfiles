@@ -11,5 +11,7 @@
 - name: Install tlp
   become: yes
   package:
-    name: tlp
+    name:
+      - tlp
+      - tlp-rdw
     state: present
