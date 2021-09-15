@@ -50,6 +50,7 @@
       - python3-language-server
       - python3-psutil
       - python3-pylint
+      - python3-pyflakes
       - toolbox
     state: present
 
