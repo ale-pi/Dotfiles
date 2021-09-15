@@ -45,6 +45,7 @@
       - clang-tools-extra
       - code
       - git
+      - hugo
       - stow
       - pycharm-community
       - python3-language-server
