@@ -88,14 +88,10 @@
   :demand t
   :hook (embark-collect-mode . consult-preview-at-point-mode))
 
-;; Corfu
+;; Company
 ;; In-buffer completion via dropdown menu
-(use-package corfu
-  :custom
-  (corfu-cycle t)
-  (corfu-auto t)
-  (corfu-quit-no-match t)
-  :init
-  (corfu-global-mode))
+(use-package company
+  :hook (after-init . global-company-mode)
+  :bind ("C-c c" . company-complete))
 
 (provide 'ap-completion)
