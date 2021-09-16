@@ -46,6 +46,7 @@
       - code
       - git
       - hugo
+      - java-11-openjdk
       - stow
       - pycharm-community
       - python3-language-server
