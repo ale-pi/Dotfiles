@@ -4,7 +4,6 @@
     name:
       - gedit
       - gnome-boxes
-      - gnome-clocks
       - gnome-contacts
       - gnome-help
       - gnome-maps
@@ -17,6 +16,7 @@
       - gnome-shell-extension-user-theme
       - gnome-tour
       - gnome-weather
+      - rhythmbox
       - totem
       - yelp
     state: absent
@@ -73,6 +73,7 @@
       - foliate
       - geary
       - gimp
+      - gnome-music
       - gparted
       - libreoffice
       - mpv
