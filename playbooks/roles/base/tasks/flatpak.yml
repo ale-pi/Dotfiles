@@ -11,6 +11,6 @@
   become: yes
   become_user: ap
   flatpak:
-    name: "nl.hjdskes.gcolor3 com.bitwarden com.discordapp.Discord com.obsproject.Studio com.skype.Client com.spotify.Client net.cozic.joplin_desktop org.geogebra.GeoGebra org.kde.kdenlive org.kde.krita org.telegram.desktop us.zoom.Zoom"
+    name: "org.gnome.World.PikaBackup nl.hjdskes.gcolor3 com.bitwarden com.discordapp.Discord com.obsproject.Studio com.skype.Client com.spotify.Client net.cozic.joplin_desktop org.geogebra.GeoGebra org.kde.kdenlive org.kde.krita org.telegram.desktop us.zoom.Zoom"
     state: present
     method: user
