@@ -11,4 +11,3 @@
 (require 'ap-dev)
 (require 'ap-emms)
 (require 'ap-eshell)
-(require 'ap-chat)
