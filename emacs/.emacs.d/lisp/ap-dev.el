@@ -2,13 +2,6 @@
 ;; Git client
 (use-package magit)
 
-;; Eglot
-;; LSP integration for emacs
-(use-package eglot
-  :hook ((c-mode . eglot-ensure)
-	 (c++-mode . eglot-ensure)
-	 (python-mode . eglot-ensure)))
-
 ;; Markdown-mode
 (use-package markdown-mode)
 
@@ -25,19 +18,7 @@
 ;; Smartparens
 ;; Minor mode to deal with pairs
 (use-package smartparens
-  :hook ((c-mode . smartparens-mode)
-	 (c++-mode . smartparens-mode)
-	 (emacs-lisp-mode . smartparens-mode)
-	 (python-mode . smartparens-mode)
-	 (scheme-mode . smartparens-mode)
-	 (geiser-repl-mode . smartparens-mode)
-	 (smartparens-mode . show-smartparens-mode)))
-
-;; Guile
-(use-package geiser)
-(use-package geiser-guile
-  :config
-  (setq geiser-guile-binary "guile2.2"))
+  :hook (smartparens-mode . show-smartparens-mode))
 
 ;; Project
 ;; Project management tool
