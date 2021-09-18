@@ -16,7 +16,6 @@
       - gnome-shell-extension-user-theme
       - gnome-tour
       - gnome-weather
-      - rhythmbox
       - totem
       - yelp
     state: absent
@@ -74,10 +73,11 @@
       - foliate
       - geary
       - gimp
-      - gnome-music
       - gparted
       - libreoffice
+      - polari
       - mpv
+      - rhythmbox      
     state: present
 
 - name: Install virtualization software
