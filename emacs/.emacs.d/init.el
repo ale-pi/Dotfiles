@@ -9,5 +9,8 @@
 (require 'ap-org)
 (require 'ap-completion)
 (require 'ap-dev)
+(require 'ap-lang-lisp)
+(require 'ap-lang-lisp)
+(require 'ap-lang-python)
 (require 'ap-emms)
 (require 'ap-eshell)
