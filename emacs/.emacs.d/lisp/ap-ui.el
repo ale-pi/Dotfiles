@@ -8,28 +8,12 @@
 (global-display-line-numbers-mode)
 (global-hl-line-mode)
 
-(defun ap/switch-theme ()
-  (interactive)
-  (if (eq (car custom-enabled-themes) 'sanityinc-tomorrow-night)
-      (progn
-	(disable-theme 'sanityinc-tomorrow-night)
-	(load-theme 'sanityinc-tomorrow-day t)
-	(ap/org-fonts-setup)
-	(message "Loaded light theme"))
-    (progn
-      (disable-theme 'sanityinc-tomorrow-day)
-      (load-theme 'sanityinc-tomorrow-night t)
-      (ap/org-fonts-setup)
-      (message "Loaded dark theme"))))
-
+;; Set color theme
 (use-package color-theme-sanityinc-tomorrow
   :config
-  (load-theme 'sanityinc-tomorrow-night t)
-  (global-set-key (kbd "<f5>") 'ap/switch-theme))
-
+  (load-theme 'sanityinc-tomorrow-night t))
   
 ;; Modeline configuration
-
 (use-package minions
   :config
   (setq minions-mode-line-lighter "~")
